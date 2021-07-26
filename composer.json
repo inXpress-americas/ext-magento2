@@ -1,5 +1,5 @@
 {
-    "name": "inxpressapps/magento2",
+    "name": "inxpress-americas/magento2",
     "description": "InXpress shipping rate provider for Magento 2",
     "keywords": [
         "module",
@@ -8,6 +8,7 @@
     ],
     "homepage": "https://www.inxpressapps.com/",
     "type": "magento2-module",
+    "version": "0.3.25",
     "license": "proprietary",
     "authors": [
         {
