@@ -154,7 +154,7 @@ class UPSInxpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier implem
                     "id" => $item->getProductId(),
                     "sku" => $item->getSku(),
                     "name" => $item->getName(),
-                    "price" => $item->getPrice(),
+                    "price" => $item->getPrice() * 100,
                     "weight" => $this->itemWeight($item),
                     "quantity" => $item->getQty()
                 ));

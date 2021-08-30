@@ -142,7 +142,7 @@ class Canpar extends \Magento\Shipping\Model\Carrier\AbstractCarrier implements
                     "id" => $item->getProductId(),
                     "sku" => $item->getSku(),
                     "name" => $item->getName(),
-                    "price" => $item->getPrice(),
+                    "price" => $item->getPrice() * 100,
                     "weight" => $this->itemWeight($item),
                     "quantity" => $item->getQty()
                 ));
