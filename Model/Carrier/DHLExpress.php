@@ -89,30 +89,37 @@ class DHLExpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
             );
 
 
-            $price = $this->calcRate($account, $gateway, $products, $destination);
+            $rates = $this->calcRate($account, $gateway, $products, $destination);
 
-            $this->_logger->critical("InXpress price", ['price' => $price]);
-            if ($price) {
-                $shippingPrice = $price['price'];
-            } else {
+            $this->_logger->critical("InXpress price", ['price' => $rates]);
+            if (!$rates) {
                 return false;
             }
-        }
 
-        if ($shippingPrice != 0) {
-            /** @var \Magento\Quote\Model\Quote\Address\RateResult\Method $method */
-            $method = $this->_rateMethodFactory->create();
+            foreach($rates as $ixpRate) {
+                $this->_logger->critical("InXpress rate", ['rate' => $ixpRate]);
+                if ($ixpRate) {
+                    $shippingPrice = $ixpRate['price'];
+                } else {
+                    return false;
+                }
 
-            $method->setCarrier('dhlexpress');
-            $method->setCarrierTitle($this->getConfigData('title'));
+                if ($shippingPrice != 0) {
+                    /** @var \Magento\Quote\Model\Quote\Address\RateResult\Method $method */
+                    $method = $this->_rateMethodFactory->create();
 
-            $method->setMethod('dhlexpress');
-            $method->setMethodTitle($this->getConfigData('name'));
+                    $method->setCarrier('dhlexpress');
+                    $method->setCarrierTitle($this->getConfigData('title'));
 
-            $method->setPrice($shippingPrice);
-            $method->setCost($shippingPrice);
+                    $method->setMethod('dhlexpress');
+                    $method->setMethodTitle($ixpRate['service']);
 
-            $result->append($method);
+                    $method->setPrice($shippingPrice);
+                    $method->setCost($shippingPrice);
+
+                    $result->append($method);
+                }
+            }
         }
 
         return $result;
@@ -250,11 +257,17 @@ class DHLExpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
             $this->_logger->critical("InXpress response array", $responseArray);
 
             if (isset($responseArray["rates"][0]["total_price"])) {
-                $response1 = array();
-                $before_handling_price = $responseArray["rates"][0]["total_price"] / 100;
-                $response1['price'] = $this->addHandling($before_handling_price);
-                $response1['days'] = $responseArray["rates"][0]["display_sub_text"];
-                return $response1;
+                $responses = array();
+                foreach($responseArray["rates"] as $rate) {
+                    $response = array();
+
+                    $before_handling_price = $rate["total_price"] / 100;
+                    $response['price'] = $this->addHandling($before_handling_price);
+                    $response['days'] = $rate["display_sub_text"];
+                    $response['service'] = $rate["display_text"];
+                    array_push($responses, $response);
+                }
+                return $responses;
             } else {
                 $this->_logger->critical("InXpress error requesting rates", ['response' => $response]);
                 return false;
