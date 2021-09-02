@@ -80,8 +80,8 @@ class Canpar extends \Magento\Shipping\Model\Carrier\AbstractCarrier implements
                 "name" => "",
                 "address1" => "",
                 "address2" => "",
-                "city" => "",
-                "province" => "",
+                "city" => $request->getDestCity(),
+                "province" => $request->getDestRegionCode(),
                 "phone" => "",
                 "country" => $request->getDestCountryId(),
                 "postal_code" => $request->getDestPostcode()
