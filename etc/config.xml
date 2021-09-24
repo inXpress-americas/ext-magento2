@@ -26,6 +26,18 @@
             </canpar>
         </carriers>
         <carriers>
+            <purolator>
+                <active>0</active>
+                <sallowspecific>0</sallowspecific>
+                <model>InXpress\InXpressRating\Model\Carrier\Purolator</model>
+                <name>InXpress Purolator Shipping</name>
+                <account></account>
+                <title>Purolator</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+            </purolator>
+        </carriers>
+        <carriers>
             <upsinxpress>
                 <active>0</active>
                 <sallowspecific>0</sallowspecific>
