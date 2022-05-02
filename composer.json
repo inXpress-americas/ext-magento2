@@ -19,7 +19,9 @@
     "scripts": {
         "test": "phpcs -v -p etc Model Controller registration.php",
         "fix": "phpcbf etc Model Controller registration.php",
-        "testversion": "phpcs -p -v etc Model Controller registration.php --standard=PHPCompatibility --runtime-set testVersion 7.3-7.4"
+        "testversion": "phpcs -p -v etc Model Controller registration.php --standard=PHPCompatibility --runtime-set testVersion 7.4-",
+        "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
+        "post-update-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
     },
     "minimum-stability": "stable",
     "require": {
