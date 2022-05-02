@@ -17,7 +17,7 @@
         }
     ],
     "scripts": {
-        "test": "phpcs -v -p etc Model Controller registration.php",
+        "test": "phpcs -v -p etc Model Controller registration.php --config-set show_warnings 0",
         "fix": "phpcbf etc Model Controller registration.php",
         "testversion": "phpcs -p -v etc Model Controller registration.php --standard=PHPCompatibility --runtime-set testVersion 7.4-",
         "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
