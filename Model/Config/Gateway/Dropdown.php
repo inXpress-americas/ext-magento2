@@ -5,7 +5,6 @@ namespace InXpress\InXpressRating\Model\Config\Gateway;
 class Dropdown implements \Magento\Framework\Option\ArrayInterface
 {
     /**
-     * {@inheritdoc}
      *
      * @codeCoverageIgnore
      */

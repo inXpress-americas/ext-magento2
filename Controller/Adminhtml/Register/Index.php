@@ -1,5 +1,4 @@
 <?php
-
 namespace InXpress\InXpressRating\Controller\Adminhtml\Register;
 
 use Magento\Framework\Controller\ResultFactory;
@@ -12,10 +11,14 @@ use Magento\Backend\App\Action\Context;
 
 class Index extends Action
 {
+    /*
+     * @var \Magento\Framework\ObjectManagerInterface
+    */
     protected $_urlInterface;
     protected $_scopeConfig;
     protected $_configWriter;
     protected $_request;
+    private $objectManager;
 
     /**
      * Index constructor.
@@ -25,19 +28,22 @@ class Index extends Action
      * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
      * @param \Magento\Framework\App\Config\Storage\WriterInterface $configWriter
      * @param \Magento\Framework\App\Request\Http $request
+     * @param \Magento\Framework\ObjectManagerInterface $objectmanager
      */
     public function __construct(
         Context $context,
         \Magento\Framework\UrlInterface $urlInterface,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         \Magento\Framework\App\Config\Storage\WriterInterface $configWriter,
-        \Magento\Framework\App\Request\Http $request
+        \Magento\Framework\App\Request\Http $request,
+        \Magento\Framework\ObjectManagerInterface $objectManager
     ) {
         parent::__construct($context);
         $this->_urlInterface = $urlInterface;
         $this->_scopeConfig = $scopeConfig;
         $this->_configWriter = $configWriter;
         $this->_request = $request;
+        $this->_objectManager = $objectManager;
     }
 
 
@@ -69,8 +75,7 @@ class Index extends Action
         } else {
             $site_url = $this->_urlInterface->getBaseUrl();
             $callback_url = $this->_urlInterface->getCurrentUrl();
-            $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-            $productMetadata = $objectManager->get('\Magento\Framework\App\ProductMetadataInterface');
+            $productMetadata = $this->_objectManager->get('\Magento\Framework\App\ProductMetadataInterface');
             $plan = 'Magento 2' . ' (v' . $productMetadata->getVersion() . ')';
 
             $redirect = $app_url . 'register?platform=Magento%202&url=' . $site_url . '&plan=' . $plan . '&callback_url=' . $callback_url;
