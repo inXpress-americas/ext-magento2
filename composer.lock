@@ -144,16 +144,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.222.3",
+            "version": "3.222.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "52b493b7b27de55e300afd26eff0be58d3689033"
+                "reference": "ae742d2ae4caa9410ad4dfe97551c68064c0cc54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/52b493b7b27de55e300afd26eff0be58d3689033",
-                "reference": "52b493b7b27de55e300afd26eff0be58d3689033",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ae742d2ae4caa9410ad4dfe97551c68064c0cc54",
+                "reference": "ae742d2ae4caa9410ad4dfe97551c68064c0cc54",
                 "shasum": ""
             },
             "require": {
@@ -229,9 +229,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.222.3"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.222.20"
             },
-            "time": "2022-05-02T18:16:06+00:00"
+            "time": "2022-05-25T18:20:20+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -732,16 +732,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.3.1",
+            "version": "1.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "4c679186f2aca4ab6a0f1b0b9cf9252decb44d0b"
+                "reference": "fd5dd441932a7e10ca6e5b490e272d34c8430640"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/4c679186f2aca4ab6a0f1b0b9cf9252decb44d0b",
-                "reference": "4c679186f2aca4ab6a0f1b0b9cf9252decb44d0b",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/fd5dd441932a7e10ca6e5b490e272d34c8430640",
+                "reference": "fd5dd441932a7e10ca6e5b490e272d34c8430640",
                 "shasum": ""
             },
             "require": {
@@ -788,7 +788,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.3.1"
+                "source": "https://github.com/composer/ca-bundle/tree/1.3.2"
             },
             "funding": [
                 {
@@ -804,20 +804,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-10-28T20:44:15+00:00"
+            "time": "2022-05-24T11:56:16+00:00"
         },
         {
             "name": "composer/composer",
-            "version": "2.2.12",
+            "version": "2.2.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "ba61e768b410736efe61df01b61f1ec44f51474f"
+                "reference": "de11c9819ac45659fb0fafb2e704912f9994ed60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/ba61e768b410736efe61df01b61f1ec44f51474f",
-                "reference": "ba61e768b410736efe61df01b61f1ec44f51474f",
+                "url": "https://api.github.com/repos/composer/composer/zipball/de11c9819ac45659fb0fafb2e704912f9994ed60",
+                "reference": "de11c9819ac45659fb0fafb2e704912f9994ed60",
                 "shasum": ""
             },
             "require": {
@@ -887,7 +887,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.2.12"
+                "source": "https://github.com/composer/composer/tree/2.2.13"
             },
             "funding": [
                 {
@@ -903,7 +903,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-13T14:42:25+00:00"
+            "time": "2022-05-25T19:37:25+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -1128,16 +1128,16 @@
         },
         {
             "name": "composer/spdx-licenses",
-            "version": "1.5.6",
+            "version": "1.5.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/spdx-licenses.git",
-                "reference": "a30d487169d799745ca7280bc90fdfa693536901"
+                "reference": "c848241796da2abf65837d51dce1fae55a960149"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/a30d487169d799745ca7280bc90fdfa693536901",
-                "reference": "a30d487169d799745ca7280bc90fdfa693536901",
+                "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/c848241796da2abf65837d51dce1fae55a960149",
+                "reference": "c848241796da2abf65837d51dce1fae55a960149",
                 "shasum": ""
             },
             "require": {
@@ -1188,7 +1188,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/spdx-licenses/issues",
-                "source": "https://github.com/composer/spdx-licenses/tree/1.5.6"
+                "source": "https://github.com/composer/spdx-licenses/tree/1.5.7"
             },
             "funding": [
                 {
@@ -1204,7 +1204,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-18T10:14:14+00:00"
+            "time": "2022-05-23T07:37:50+00:00"
         },
         {
             "name": "composer/xdebug-handler",
@@ -1463,16 +1463,16 @@
         },
         {
             "name": "endroid/qr-code",
-            "version": "4.4.8",
+            "version": "4.4.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/endroid/qr-code.git",
-                "reference": "9109eb7790ece1d46b1ab40eb7f375bbd6e7cb5d"
+                "reference": "bf087fa1e93a1b7310e2d94d187e26ae51db199d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/endroid/qr-code/zipball/9109eb7790ece1d46b1ab40eb7f375bbd6e7cb5d",
-                "reference": "9109eb7790ece1d46b1ab40eb7f375bbd6e7cb5d",
+                "url": "https://api.github.com/repos/endroid/qr-code/zipball/bf087fa1e93a1b7310e2d94d187e26ae51db199d",
+                "reference": "bf087fa1e93a1b7310e2d94d187e26ae51db199d",
                 "shasum": ""
             },
             "require": {
@@ -1523,7 +1523,7 @@
             ],
             "support": {
                 "issues": "https://github.com/endroid/qr-code/issues",
-                "source": "https://github.com/endroid/qr-code/tree/4.4.8"
+                "source": "https://github.com/endroid/qr-code/tree/4.4.9"
             },
             "funding": [
                 {
@@ -1531,7 +1531,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-04-06T09:39:20+00:00"
+            "time": "2022-05-10T07:25:08+00:00"
         },
         {
             "name": "ezimuel/guzzlestreams",
@@ -1772,16 +1772,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.4.2",
+            "version": "7.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "ac1ec1cd9b5624694c3a40be801d94137afb12b4"
+                "reference": "74a8602c6faec9ef74b7a9391ac82c5e65b1cdab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ac1ec1cd9b5624694c3a40be801d94137afb12b4",
-                "reference": "ac1ec1cd9b5624694c3a40be801d94137afb12b4",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/74a8602c6faec9ef74b7a9391ac82c5e65b1cdab",
+                "reference": "74a8602c6faec9ef74b7a9391ac82c5e65b1cdab",
                 "shasum": ""
             },
             "require": {
@@ -1876,7 +1876,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.4.2"
+                "source": "https://github.com/guzzle/guzzle/tree/7.4.3"
             },
             "funding": [
                 {
@@ -1892,7 +1892,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-20T14:16:28+00:00"
+            "time": "2022-05-25T13:24:33+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -2490,16 +2490,16 @@
         },
         {
             "name": "laminas/laminas-di",
-            "version": "3.4.0",
+            "version": "3.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-di.git",
-                "reference": "fc8a5547db10908a25b03ed16452d22318b75090"
+                "reference": "80c90d68bc15d4e094a609760144ce1d1aad0a79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-di/zipball/fc8a5547db10908a25b03ed16452d22318b75090",
-                "reference": "fc8a5547db10908a25b03ed16452d22318b75090",
+                "url": "https://api.github.com/repos/laminas/laminas-di/zipball/80c90d68bc15d4e094a609760144ce1d1aad0a79",
+                "reference": "80c90d68bc15d4e094a609760144ce1d1aad0a79",
                 "shasum": ""
             },
             "require": {
@@ -2520,7 +2520,8 @@
                 "mikey179/vfsstream": "^1.6.10@alpha",
                 "phpspec/prophecy-phpunit": "^2.0",
                 "phpstan/phpstan": "^0.12.64",
-                "phpunit/phpunit": "^9.5.5"
+                "phpunit/phpunit": "^9.5.5",
+                "squizlabs/php_codesniffer": "^3.6"
             },
             "suggest": {
                 "laminas/laminas-servicemanager": "An IoC container without auto wiring capabilities"
@@ -2562,7 +2563,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2022-02-26T15:43:05+00:00"
+            "time": "2022-05-15T18:19:36+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
@@ -16732,16 +16733,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "2.5.0",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "4192345e260f1d51b365536199744b987e160edc"
+                "reference": "247918972acd74356b0a91dfaa5adcaec069b6c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/4192345e260f1d51b365536199744b987e160edc",
-                "reference": "4192345e260f1d51b365536199744b987e160edc",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/247918972acd74356b0a91dfaa5adcaec069b6c0",
+                "reference": "247918972acd74356b0a91dfaa5adcaec069b6c0",
                 "shasum": ""
             },
             "require": {
@@ -16754,18 +16755,23 @@
             "require-dev": {
                 "aws/aws-sdk-php": "^2.4.9 || ^3.0",
                 "doctrine/couchdb": "~1.0@dev",
-                "elasticsearch/elasticsearch": "^7",
+                "elasticsearch/elasticsearch": "^7 || ^8",
+                "ext-json": "*",
                 "graylog2/gelf-php": "^1.4.2",
+                "guzzlehttp/guzzle": "^7.4",
+                "guzzlehttp/psr7": "^2.2",
                 "mongodb/mongodb": "^1.8",
                 "php-amqplib/php-amqplib": "~2.4 || ^3",
                 "php-console/php-console": "^3.1.3",
-                "phpspec/prophecy": "^1.6.1",
+                "phpspec/prophecy": "^1.15",
                 "phpstan/phpstan": "^0.12.91",
-                "phpunit/phpunit": "^8.5",
+                "phpunit/phpunit": "^8.5.14",
                 "predis/predis": "^1.1",
                 "rollbar/rollbar": "^1.3 || ^2 || ^3",
-                "ruflin/elastica": ">=0.90@dev",
-                "swiftmailer/swiftmailer": "^5.3|^6.0"
+                "ruflin/elastica": "^7",
+                "swiftmailer/swiftmailer": "^5.3|^6.0",
+                "symfony/mailer": "^5.4 || ^6",
+                "symfony/mime": "^5.4 || ^6"
             },
             "suggest": {
                 "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
@@ -16815,7 +16821,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/2.5.0"
+                "source": "https://github.com/Seldaek/monolog/tree/2.6.0"
             },
             "funding": [
                 {
@@ -16827,7 +16833,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-08T15:43:54+00:00"
+            "time": "2022-05-10T09:36:00+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",
