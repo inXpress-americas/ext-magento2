@@ -6,14 +6,22 @@
                 <active>0</active>
                 <sallowspecific>0</sallowspecific>
                 <model>InXpress\InXpressRating\Model\Carrier\DHLExpress</model>
-                <name>InXpress DHL Shipping</name>
+                <name>InXpress DHL Express Shipping</name>
                 <account></account>
                 <title>DHL Express</title>
                 <type>I</type>
                 <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
             </dhlexpress>
-        </carriers>
-        <carriers>
+            <dhlparcel>
+                <active>0</active>
+                <sallowspecific>0</sallowspecific>
+                <model>InXpress\InXpressRating\Model\Carrier\DHLParcel</model>
+                <name>InXpress DHL Parcel Shipping</name>
+                <account></account>
+                <title>DHL Parcel</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+            </dhlparcel>
             <canpar>
                 <active>0</active>
                 <sallowspecific>0</sallowspecific>
@@ -24,8 +32,6 @@
                 <type>I</type>
                 <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
             </canpar>
-        </carriers>
-        <carriers>
             <purolator>
                 <active>0</active>
                 <sallowspecific>0</sallowspecific>
@@ -36,8 +42,6 @@
                 <type>I</type>
                 <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
             </purolator>
-        </carriers>
-        <carriers>
             <upsinxpress>
                 <active>0</active>
                 <sallowspecific>0</sallowspecific>
