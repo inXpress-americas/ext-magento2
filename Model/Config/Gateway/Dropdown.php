@@ -18,6 +18,10 @@ class Dropdown implements \Magento\Framework\Option\ArrayInterface
             [
                 'value' => 'CA',
                 'label' => 'CA',
+            ],
+            [
+                'value' => 'UK',
+                'label' => 'UK',
             ]
         ];
     }
