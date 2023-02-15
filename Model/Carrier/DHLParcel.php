@@ -229,7 +229,7 @@ class DHLParcel extends \Magento\Shipping\Model\Carrier\AbstractCarrier implemen
             "account" => $account,
             "gateway" => $gateway,
             "services" => array(array(
-                "carrier" => "DHL",
+                "carrier" => "DHL Parcel",
                 "service" => "DHL Express"
             )),
             "origin" => $origin,
