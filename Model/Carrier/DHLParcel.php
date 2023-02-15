@@ -204,9 +204,10 @@ class DHLParcel extends \Magento\Shipping\Model\Carrier\AbstractCarrier implemen
             return false;
         }
 
+        $address = $this->getConfigData('address') ?? "";
         $origin = array(
             "name" => "",
-            "address1" => "",
+            "address1" => $address,
             "address2" => "",
             "city" => $this->_scopeConfig->getValue(
                 Config::XML_PATH_ORIGIN_CITY,
