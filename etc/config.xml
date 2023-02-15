@@ -17,6 +17,7 @@
                 <sallowspecific>0</sallowspecific>
                 <model>InXpress\InXpressRating\Model\Carrier\DHLParcel</model>
                 <name>InXpress DHL Parcel Shipping</name>
+                <address></address>
                 <account></account>
                 <title>DHL Parcel</title>
                 <type>I</type>

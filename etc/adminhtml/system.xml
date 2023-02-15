@@ -59,6 +59,9 @@
                 <field id="name" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Method Name</label>
                 </field>
+                <field id="address" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Street Address 1 from XMS</label>
+                </field>
                 <field id="gateway" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Gateway</label>
                     <source_model>InXpress\InXpressRating\Model\Config\Gateway\Dropdown</source_model>
