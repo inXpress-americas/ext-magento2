@@ -62,7 +62,7 @@ class UPSInxpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier implem
     public function getRegionCode( $regionId ){
         $region = $this->_regionFactory->create()->load($regionId);
         $regionArray = $region->getData();
-	    return $regionArray['code'];
+	    return $regionArray['code'] ?? "";
     }
 
     /**

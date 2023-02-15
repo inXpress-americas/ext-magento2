@@ -208,7 +208,11 @@ class DHLParcel extends \Magento\Shipping\Model\Carrier\AbstractCarrier implemen
             "name" => "",
             "address1" => "",
             "address2" => "",
-            "city" => "",
+            "city" => $this->_scopeConfig->getValue(
+                Config::XML_PATH_ORIGIN_CITY,
+                $storeScope,
+                \Magento\Store\Model\Store::DEFAULT_STORE_ID
+            ),
             "province" => "",
             "phone" => "",
             "country" => $this->_scopeConfig->getValue(
