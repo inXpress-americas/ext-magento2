@@ -49,9 +49,6 @@
                 <field id="specificerrmsg" translate="label" type="textarea" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Displayed Error Message</label>
                 </field>
-                <field id="store_id" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Store ID set by registration</label>
-                </field>
             </group>
             <group id="dhlparcel" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>DHL Parcel by InXpress</label>
@@ -147,9 +144,6 @@
                 </field>
                 <field id="specificerrmsg" translate="label" type="textarea" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Displayed Error Message</label>
-                </field>
-                <field id="store_id" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Store ID set by registration</label>
                 </field>
             </group>
             <group id="canpar" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
