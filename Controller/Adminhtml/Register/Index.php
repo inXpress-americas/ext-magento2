@@ -3,6 +3,7 @@ namespace InXpress\InXpressRating\Controller\Adminhtml\Register;
 
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\App\Action\Action;
+use Magento\Shipping\Model\Config;
 use Magento\Backend\App\Action\Context;
 
 /**
@@ -73,14 +74,16 @@ class Index extends Action
 
             $resultRedirect->setUrl($app_url . 'store/' . $store_id);
         } else {
+            $gateway = $this->getConfigData('gateway');
+            $lower_gateway = strtolower($gateway);
             $site_url = $this->_urlInterface->getBaseUrl();
             $callback_url = $this->_urlInterface->getCurrentUrl();
             $productMetadata = $this->_objectManager->get('\Magento\Framework\App\ProductMetadataInterface');
             $plan = 'Magento 2' . ' (v' . $productMetadata->getVersion() . ')';
 
-            $redirect = $app_url . 'register?platform=Magento%202&url=' . $site_url . '&plan=' . $plan . '&callback_url=' . $callback_url;
+            $registeration_url = 'https://test' . $lower_gateway . 'webship.inxpress.com/imcs_' . $lower_gateway . '/live/rating/link/account?gateway=' . $gateway . '&platform=WooCommerce&plan=' . $plan . '&storeUrl=' . urlencode($site_url) . '&callbackUrl=' . urlencode($callback_url);
 
-            $resultRedirect->setUrl($redirect);
+            $resultRedirect->setUrl($registeration_url);
         }
 
         return $resultRedirect;
