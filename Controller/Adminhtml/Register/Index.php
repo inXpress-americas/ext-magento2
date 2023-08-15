@@ -1,4 +1,5 @@
 <?php
+
 namespace InXpress\InXpressRating\Controller\Adminhtml\Register;
 
 use Magento\Framework\Controller\ResultFactory;
@@ -81,7 +82,7 @@ class Index extends Action
             $productMetadata = $this->_objectManager->get('\Magento\Framework\App\ProductMetadataInterface');
             $plan = 'Magento 2' . ' (v' . $productMetadata->getVersion() . ')';
 
-            $registeration_url = 'https://test' . $lower_gateway . 'webship.inxpress.com/imcs_' . $lower_gateway . '/live/rating/link/account?gateway=' . $gateway . '&platform=WooCommerce&plan=' . $plan . '&storeUrl=' . urlencode($site_url) . '&callbackUrl=' . urlencode($callback_url);
+            $registeration_url = 'https://test' . $lower_gateway . 'webship.inxpress.com/imcs_' . $lower_gateway . '/live/rating/link/account?gateway=' . $gateway . '&platform=' . urlencode('Magento 2') . '&plan=' . $plan . '&storeUrl=' . urlencode($site_url) . '&callbackUrl=' . urlencode($callback_url);
 
             $resultRedirect->setUrl($registeration_url);
         }
