@@ -72,7 +72,7 @@
                 <title>StarTrack by InXpress</title>
                 <type>I</type>
                 <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
-            </fedexinxpress>
+            </startrackinxpress>
         </carriers>
     </default>
 </config>
