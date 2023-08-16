@@ -249,6 +249,10 @@
                 <field id="account" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Account Number</label>
                 </field>
+                <field id="gateway" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Gateway</label>
+                    <source_model>InXpress\InXpressRating\Model\Config\Gateway\Dropdown</source_model>
+                </field>
                 <field id="handling_type" translate="label" type="select" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Calculate Handling Fee</label>
                     <source_model>Magento\Shipping\Model\Source\HandlingType</source_model>

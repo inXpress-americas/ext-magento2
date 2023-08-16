@@ -67,7 +67,6 @@ class StarTrackInxpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier 
 		/** @var \Magento\Shipping\Model\Rate\Result $result */
 		$result = $this->_rateResultFactory->create();
 
-		$gateway = $this->getConfigData('gateway');
 		$account = $this->getConfigData('account');
 
 		if (!$account) {
@@ -89,7 +88,7 @@ class StarTrackInxpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier 
 			);
 
 
-			$rates = $this->calcRate($account, $gateway, $products, $destination);
+			$rates = $this->calcRate($account, $products, $destination);
 
 			$this->_logger->critical("InXpress price", ['price' => $rates]);
 			if (!$rates) {
@@ -194,7 +193,7 @@ class StarTrackInxpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier 
 		return $price;
 	}
 
-	public function calcRate($account, $gateway, $products, $destination)
+	public function calcRate($account, $products, $destination)
 	{
 		$storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORES;
 		$store_id = $this->_scopeConfig->getValue("system/carriers/dhlexpress/store_id", $storeScope, \Magento\Store\Model\Store::DEFAULT_STORE_ID);
@@ -232,7 +231,7 @@ class StarTrackInxpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier 
 
 		$payload = json_encode(array(
 			"account" => $account,
-			"gateway" => $gateway,
+			"gateway" => "AU",
 			"services" => array(array(
 				"carrier" => "StarTrack",
 			)),
