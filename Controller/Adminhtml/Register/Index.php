@@ -4,13 +4,13 @@ namespace InXpress\InXpressRating\Controller\Adminhtml\Register;
 
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Backend\App\Action\Context;
-use Magento\Framework\App\ActionInterface;
+use Magento\Framework\App\Action\HttpGetActionInterface;
 
 /**
  * Class Index
  */
 
-class Index implements ActionInterface
+class Index implements HttpGetActionInterface
 {
     /*
      * @var \Magento\Framework\ObjectManagerInterface
