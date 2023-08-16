@@ -4,7 +4,6 @@ namespace InXpress\InXpressRating\Controller\Adminhtml\Register;
 
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\App\Action\Action;
-use Magento\Shipping\Model\Config;
 use Magento\Backend\App\Action\Context;
 
 /**
@@ -58,6 +57,11 @@ class Index extends Action
 
         $storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORES;
         $store_id = $this->_scopeConfig->getValue("system/carriers/dhlexpress/store_id", $storeScope, \Magento\Store\Model\Store::DEFAULT_STORE_ID);
+        $gateway = $this->_scopeConfig->getValue("carriers/dhlexpress/gateway", $storeScope, \Magento\Store\Model\Store::DEFAULT_STORE_ID);
+
+        if (!$gateway) {
+            $gateway = $this->_scopeConfig->getValue("carriers/upsinxpress/gateway", $storeScope, \Magento\Store\Model\Store::DEFAULT_STORE_ID);
+        }
 
         $params = $this->_request->getParams();
 
@@ -75,7 +79,6 @@ class Index extends Action
 
             $resultRedirect->setUrl($app_url . 'store/' . $store_id);
         } else {
-            $gateway = $this->getConfigData('gateway');
             $lower_gateway = strtolower($gateway);
             $site_url = $this->_urlInterface->getBaseUrl();
             $callback_url = $this->_urlInterface->getCurrentUrl();
