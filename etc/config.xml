@@ -53,6 +53,26 @@
                 <type>I</type>
                 <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
             </upsinxpress>
+            <fedexinxpress>
+                <active>0</active>
+                <sallowspecific>0</sallowspecific>
+                <model>InXpress\InXpressRating\Model\Carrier\FedExInxpress</model>
+                <name>InXpress FedEx Shipping</name>
+                <account></account>
+                <title>FedEx by InXpress</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+            </fedexinxpress>
+            <startrackinxpress>
+                <active>0</active>
+                <sallowspecific>0</sallowspecific>
+                <model>InXpress\InXpressRating\Model\Carrier\StarTrackInxpress</model>
+                <name>InXpress StarTrack Shipping</name>
+                <account></account>
+                <title>StarTrack by InXpress</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+            </fedexinxpress>
         </carriers>
     </default>
 </config>
