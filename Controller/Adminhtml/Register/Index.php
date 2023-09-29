@@ -62,7 +62,7 @@ class Index extends Action
 
         $params = $this->_request->getParams();
         $lower_gateway = strtolower($gateway);
-        $app_url = "https://test" . $lower_gateway . "webship.inxpress.com/imcs_" . $lower_gateway . "/ecommercial/setting/live/rating/manage/list?type=MAGENTO2";
+        $app_url = "https://test" . $lower_gateway . "webship.inxpress.com/imcs_" . $lower_gateway . "/ecommercial/setting/live/rating/manage?type=MAGENTO2&id=" . $store_id;
 
         if ($store_id) {
             $resultRedirect->setUrl($app_url);
