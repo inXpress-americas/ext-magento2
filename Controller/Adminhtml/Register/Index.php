@@ -50,9 +50,6 @@ class Index extends Action
 
     public function execute()
     {
-        //$app_url = 'http://localhost:8080/';
-        $app_url = 'https://portal.inxpressapps.com/';
-
         $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
 
         $storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORES;
@@ -64,9 +61,11 @@ class Index extends Action
         }
 
         $params = $this->_request->getParams();
+        $lower_gateway = strtolower($gateway);
+        $app_url = "https://test" . $lower_gateway . "webship.inxpress.com/imcs_" . $lower_gateway . "/ecommercial/setting/live/rating/manage/list?type=MAGENTO2";
 
         if ($store_id) {
-            $resultRedirect->setUrl($app_url . 'store/' . $store_id);
+            $resultRedirect->setUrl($app_url);
         } elseif (array_key_exists('registered', $params) && $params['registered'] == "true") {
             $store_id = $params['store_id'];
 
@@ -77,9 +76,8 @@ class Index extends Action
                 \Magento\Store\Model\Store::DEFAULT_STORE_ID
             );
 
-            $resultRedirect->setUrl($app_url . 'store/' . $store_id);
+            $resultRedirect->setUrl($app_url);
         } else {
-            $lower_gateway = strtolower($gateway);
             $site_url = $this->_urlInterface->getBaseUrl();
             $callback_url = $this->_urlInterface->getCurrentUrl();
             $productMetadata = $this->_objectManager->get('\Magento\Framework\App\ProductMetadataInterface');
