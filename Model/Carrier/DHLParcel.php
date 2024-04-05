@@ -6,15 +6,14 @@ use Magento\Quote\Model\Quote\Address\RateRequest;
 use Magento\Shipping\Model\Rate\Result;
 use Magento\Shipping\Model\Config;
 use Magento\Framework\HTTP\ZendClient;
-use Magento\Directory\Model\RegionFactory;
 
-class UPSInxpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier implements
+class DHLParcel extends \Magento\Shipping\Model\Carrier\AbstractCarrier implements
     \Magento\Shipping\Model\Carrier\CarrierInterface
 {
     /**
      * @var string
      */
-    protected $_code = 'upsinxpress';
+    protected $_code = 'dhlparcel';
 
     /**
      * @var \Magento\Framework\HTTP\ZendClientFactory $clientFactory
@@ -37,13 +36,11 @@ class UPSInxpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier implem
         \Magento\Shipping\Model\Rate\ResultFactory $rateResultFactory,
         \Magento\Framework\HTTP\ZendClientFactory $clientFactory,
         \Magento\Quote\Model\Quote\Address\RateResult\MethodFactory $rateMethodFactory,
-        \Magento\Directory\Model\RegionFactory $regionFactory,
         array $data = []
     ) {
         $this->_rateResultFactory = $rateResultFactory;
         $this->_rateMethodFactory = $rateMethodFactory;
         $this->_clientFactory = $clientFactory;
-        $this->_regionFactory = $regionFactory;
         parent::__construct($scopeConfig, $rateErrorFactory, $logger, $data);
     }
 
@@ -52,17 +49,7 @@ class UPSInxpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier implem
      */
     public function getAllowedMethods()
     {
-        return ['upsinxpress' => $this->getConfigData('name')];
-    }
-
-    /**
-     * @param $regionId
-     * @return String
-     */
-    public function getRegionCode( $regionId ){
-        $region = $this->_regionFactory->create()->load($regionId);
-        $regionArray = $region->getData();
-	    return $regionArray['code'] ?? "";
+        return ['dhlparcel' => $this->getConfigData('name')];
     }
 
     /**
@@ -102,32 +89,35 @@ class UPSInxpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier implem
             );
 
 
-            $prices = $this->calcRate($account, $gateway, $products, $destination);
+            $rates = $this->calcRate($account, $gateway, $products, $destination);
 
-            if ($prices) {
-                foreach($prices as $price) {
-                    $this->_logger->critical("InXpress price", ['price' => $prices]);
-                    if ($price) {
-                        $shippingPrice = $price['price'];
-                    } else {
-                        return false;
-                    }
+            $this->_logger->critical("InXpress price", ['price' => $rates]);
+            if (!$rates) {
+                return false;
+            }
 
-                    if ($shippingPrice != 0) {
-                        /** @var \Magento\Quote\Model\Quote\Address\RateResult\Method $method */
-                        $method = $this->_rateMethodFactory->create();
+            foreach($rates as $ixpRate) {
+                $this->_logger->critical("InXpress rate", ['rate' => $ixpRate]);
+                if ($ixpRate) {
+                    $shippingPrice = $ixpRate['price'];
+                } else {
+                    return false;
+                }
 
-                        $method->setCarrier('upsinxpress');
-                        $method->setCarrierTitle($this->getConfigData('title'));
+                if ($shippingPrice != 0) {
+                    /** @var \Magento\Quote\Model\Quote\Address\RateResult\Method $method */
+                    $method = $this->_rateMethodFactory->create();
 
-                        $method->setMethod(strtolower($price['service_code']));
-                        $method->setMethodTitle($price['service']);
+                    $method->setCarrier('dhlparcel');
+                    $method->setCarrierTitle($this->getConfigData('title'));
 
-                        $method->setPrice($shippingPrice);
-                        $method->setCost($shippingPrice);
+                    $method->setMethod($ixpRate['service_code']);
+                    $method->setMethodTitle($ixpRate['service']);
 
-                        $result->append($method);
-                    }
+                    $method->setPrice($shippingPrice);
+                    $method->setCost($shippingPrice);
+
+                    $result->append($method);
                 }
             }
         }
@@ -214,22 +204,17 @@ class UPSInxpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier implem
             return false;
         }
 
-        $regionCode = $this->getRegionCode( $this->_scopeConfig->getValue(
-            Config::XML_PATH_ORIGIN_REGION_ID,
-            $storeScope,
-            \Magento\Store\Model\Store::DEFAULT_STORE_ID )
-	     );
-
+        $address = $this->getConfigData('address') ?? "";
         $origin = array(
             "name" => "",
-            "address1" => "",
+            "address1" => $address,
             "address2" => "",
             "city" => $this->_scopeConfig->getValue(
                 Config::XML_PATH_ORIGIN_CITY,
                 $storeScope,
                 \Magento\Store\Model\Store::DEFAULT_STORE_ID
             ),
-	        "province" => $regionCode,
+            "province" => "",
             "phone" => "",
             "country" => $this->_scopeConfig->getValue(
                 Config::XML_PATH_ORIGIN_COUNTRY_ID,
@@ -249,7 +234,7 @@ class UPSInxpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier implem
             "account" => $account,
             "gateway" => $gateway,
             "services" => array(array(
-                "carrier" => "UPS",
+                "carrier" => "DHL Parcel",
                 "service" => "DHL Express"
             )),
             "origin" => $origin,
@@ -285,7 +270,7 @@ class UPSInxpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier implem
                     $response['price'] = $this->addHandling($before_handling_price);
                     $response['days'] = $rate["display_sub_text"];
                     $response['service'] = $rate["display_text"];
-                    $response['service_code'] = $rate["service_code"];
+		            $response['service_code'] = $rate["service_code"];
                     array_push($responses, $response);
                 }
                 return $responses;

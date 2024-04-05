@@ -6,14 +6,23 @@
                 <active>0</active>
                 <sallowspecific>0</sallowspecific>
                 <model>InXpress\InXpressRating\Model\Carrier\DHLExpress</model>
-                <name>InXpress DHL Shipping</name>
+                <name>InXpress DHL Express Shipping</name>
                 <account></account>
                 <title>DHL Express</title>
                 <type>I</type>
                 <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
             </dhlexpress>
-        </carriers>
-        <carriers>
+            <dhlparcel>
+                <active>0</active>
+                <sallowspecific>0</sallowspecific>
+                <model>InXpress\InXpressRating\Model\Carrier\DHLParcel</model>
+                <name>InXpress DHL Parcel Shipping</name>
+                <address></address>
+                <account></account>
+                <title>DHL Parcel</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+            </dhlparcel>
             <canpar>
                 <active>0</active>
                 <sallowspecific>0</sallowspecific>
@@ -24,9 +33,7 @@
                 <type>I</type>
                 <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
             </canpar>
-        </carriers>
-        <carriers>
-            <canpar>
+            <loomis>
                 <active>0</active>
                 <sallowspecific>0</sallowspecific>
                 <model>InXpress\InXpressRating\Model\Carrier\Loomis</model>
@@ -35,9 +42,7 @@
                 <title>Loomis</title>
                 <type>I</type>
                 <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
-            </canpar>
-        </carriers>
-        <carriers>
+            </loomis>
             <purolator>
                 <active>0</active>
                 <sallowspecific>0</sallowspecific>
@@ -48,8 +53,6 @@
                 <type>I</type>
                 <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
             </purolator>
-        </carriers>
-        <carriers>
             <upsinxpress>
                 <active>0</active>
                 <sallowspecific>0</sallowspecific>
@@ -60,6 +63,26 @@
                 <type>I</type>
                 <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
             </upsinxpress>
+            <fedexinxpress>
+                <active>0</active>
+                <sallowspecific>0</sallowspecific>
+                <model>InXpress\InXpressRating\Model\Carrier\FedExInxpress</model>
+                <name>InXpress FedEx Shipping</name>
+                <account></account>
+                <title>FedEx by InXpress</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+            </fedexinxpress>
+            <startrackinxpress>
+                <active>0</active>
+                <sallowspecific>0</sallowspecific>
+                <model>InXpress\InXpressRating\Model\Carrier\StarTrackInxpress</model>
+                <name>InXpress StarTrack Shipping</name>
+                <account></account>
+                <title>StarTrack by InXpress</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+            </startrackinxpress>
         </carriers>
     </default>
 </config>
