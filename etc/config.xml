@@ -33,6 +33,16 @@
                 <type>I</type>
                 <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
             </canpar>
+            <loomis>
+                <active>0</active>
+                <sallowspecific>0</sallowspecific>
+                <model>InXpress\InXpressRating\Model\Carrier\Loomis</model>
+                <name>InXpress Loomis Shipping</name>
+                <account></account>
+                <title>Loomis</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+            </loomis>
             <purolator>
                 <active>0</active>
                 <sallowspecific>0</sallowspecific>
