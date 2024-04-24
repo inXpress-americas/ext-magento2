@@ -4,6 +4,7 @@ namespace InXpress\InXpressRating\Controller\Adminhtml\Register;
 
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\App\Action\Action;
+use Magento\Shipping\Model\Config;
 use Magento\Backend\App\Action\Context;
 
 /**
@@ -58,6 +59,10 @@ class Index extends Action
 
         if (!$gateway) {
             $gateway = $this->_scopeConfig->getValue("carriers/upsinxpress/gateway", $storeScope, \Magento\Store\Model\Store::DEFAULT_STORE_ID);
+        }
+
+        if (!$gateway) {
+            $gateway = $this->_scopeConfig->getValue(Config::XML_PATH_ORIGIN_COUNTRY_ID, $storeScope, \Magento\Store\Model\Store::DEFAULT_STORE_ID);
         }
 
         $params = $this->_request->getParams();
