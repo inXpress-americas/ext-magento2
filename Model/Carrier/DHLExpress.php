@@ -5,7 +5,6 @@ namespace InXpress\InXpressRating\Model\Carrier;
 use Magento\Quote\Model\Quote\Address\RateRequest;
 use Magento\Shipping\Model\Rate\Result;
 use Magento\Shipping\Model\Config;
-use Magento\Framework\HTTP\ZendClient;
 
 class DHLExpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier implements
     \Magento\Shipping\Model\Carrier\CarrierInterface
@@ -16,17 +15,12 @@ class DHLExpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
     protected $_code = 'dhlexpress';
 
     /**
-     * @var \Magento\Framework\HTTP\ZendClientFactory $clientFactory
-     */
-    protected $clientFactory;
-
-    /**
      * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
      * @param \Magento\Quote\Model\Quote\Address\RateResult\ErrorFactory $rateErrorFactory
      * @param \Psr\Log\LoggerInterface $logger
      * @param \Magento\Shipping\Model\Rate\ResultFactory $rateResultFactory
      * @param \Magento\Quote\Model\Quote\Address\RateResult\MethodFactory $rateMethodFactory
-     * @param \Magento\Framework\HTTP\ZendClientFactory $clientFactory
+     * @param \Magento\Framework\HTTP\Client\Curl $curl
      * @param array $data
      */
     public function __construct(
@@ -34,13 +28,13 @@ class DHLExpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
         \Magento\Quote\Model\Quote\Address\RateResult\ErrorFactory $rateErrorFactory,
         \Psr\Log\LoggerInterface $logger,
         \Magento\Shipping\Model\Rate\ResultFactory $rateResultFactory,
-        \Magento\Framework\HTTP\ZendClientFactory $clientFactory,
+        \Magento\Framework\HTTP\Client\Curl $curl,
         \Magento\Quote\Model\Quote\Address\RateResult\MethodFactory $rateMethodFactory,
         array $data = []
     ) {
         $this->_rateResultFactory = $rateResultFactory;
         $this->_rateMethodFactory = $rateMethodFactory;
-        $this->_clientFactory = $clientFactory;
+        $this->_curl = $curl;
         parent::__construct($scopeConfig, $rateErrorFactory, $logger, $data);
     }
 
@@ -96,7 +90,7 @@ class DHLExpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
                 return false;
             }
 
-            foreach($rates as $ixpRate) {
+            foreach ($rates as $ixpRate) {
                 $this->_logger->critical("InXpress rate", ['rate' => $ixpRate]);
                 if ($ixpRate) {
                     $shippingPrice = $ixpRate['price'];
@@ -158,7 +152,7 @@ class DHLExpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
         $weight_in_uom = floatval($item->getWeight());
         $weight_unit = $this->getWeightUnit();
 
-        switch ( $weight_unit ) {
+        switch ($weight_unit) {
             case 'lbs':
                 $weight = $weight_in_uom * 453.5920;
                 break;
@@ -182,11 +176,11 @@ class DHLExpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
         $handling_type = $this->getConfigData('handling_type');
         $handling_fee = $this->getConfigData('handling_fee');
 
-        if ( $handling_type === "F" && isset( $handling_fee )) {
+        if ($handling_type === "F" && isset($handling_fee)) {
             $price += $handling_fee;
         }
 
-        if ( $handling_type === "P" && isset( $handling_fee )) {
+        if ($handling_type === "P" && isset($handling_fee)) {
             $multiplier = $handling_fee / 100 + 1.00;
             $price *= $multiplier;
         }
@@ -225,47 +219,36 @@ class DHLExpress extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
 
         $url = "https://api.inxpressapps.com/carrier/v1/stores/" . $store_id . "/rates";
 
-        $payload = json_encode(array(
+        $payload = [
             "account" => $account,
             "gateway" => $gateway,
             "services" => array(array(
-                "carrier" => "DHL",
-                "service" => "DHL Express"
+                "carrier" => "DHL"
             )),
             "origin" => $origin,
             "destination" => $destination,
             "items" => $products
-        ));
+        ];
 
         $this->_logger->critical("InXpress requesting rates", ['url' => $url, 'request' => $payload]);
 
         try {
-            /** @var \Magento\Framework\HTTP\ZendClient $client */
-            $client = $this->_clientFactory->create();
-            $client->setUri($url);
-            $client->setMethod(ZendClient::POST);
-            $client->setHeaders([
-                'Accept' => 'application/json',
-                'Content-Type' => 'application/json'
-            ]);
-            $client->setConfig(array('maxredirects' => 0, 'timeout' => 30));
-            $client->setRawData($payload);
-            $client->setEncType('application/json');
-            $response = $client->request(\Magento\Framework\HTTP\ZendClient::POST)->getBody();
-
+            $this->_curl->addHeader("Content-Type", "application/json");
+            $this->_curl->post($url, json_encode($payload));
+            $response = $this->_curl->getBody();
             $responseArray = json_decode($response, true);
             $this->_logger->critical("InXpress response array", $responseArray);
 
             if (isset($responseArray["rates"][0]["total_price"])) {
                 $responses = array();
-                foreach($responseArray["rates"] as $rate) {
+                foreach ($responseArray["rates"] as $rate) {
                     $response = array();
 
                     $before_handling_price = $rate["total_price"] / 100;
                     $response['price'] = $this->addHandling($before_handling_price);
                     $response['days'] = $rate["display_sub_text"];
                     $response['service'] = $rate["display_text"];
-		            $response['service_code'] = $rate["service_code"];
+                    $response['service_code'] = $rate["service_code"];
                     array_push($responses, $response);
                 }
                 return $responses;

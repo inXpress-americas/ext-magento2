@@ -5,7 +5,6 @@ namespace InXpress\InXpressRating\Model\Carrier;
 use Magento\Quote\Model\Quote\Address\RateRequest;
 use Magento\Shipping\Model\Rate\Result;
 use Magento\Shipping\Model\Config;
-use Magento\Framework\HTTP\ZendClient;
 
 class Loomis extends \Magento\Shipping\Model\Carrier\AbstractCarrier implements
 	\Magento\Shipping\Model\Carrier\CarrierInterface
@@ -16,17 +15,12 @@ class Loomis extends \Magento\Shipping\Model\Carrier\AbstractCarrier implements
 	protected $_code = 'loomis';
 
 	/**
-	 * @var \Magento\Framework\HTTP\ZendClientFactory $clientFactory
-	 */
-	protected $clientFactory;
-
-	/**
 	 * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
 	 * @param \Magento\Quote\Model\Quote\Address\RateResult\ErrorFactory $rateErrorFactory
 	 * @param \Psr\Log\LoggerInterface $logger
 	 * @param \Magento\Shipping\Model\Rate\ResultFactory $rateResultFactory
 	 * @param \Magento\Quote\Model\Quote\Address\RateResult\MethodFactory $rateMethodFactory
-	 * @param \Magento\Framework\HTTP\ZendClientFactory $clientFactory
+	 * @param \Magento\Framework\HTTP\Client\Curl $curl
 	 * @param array $data
 	 */
 
@@ -35,14 +29,14 @@ class Loomis extends \Magento\Shipping\Model\Carrier\AbstractCarrier implements
 		\Magento\Quote\Model\Quote\Address\RateResult\ErrorFactory $rateErrorFactory,
 		\Psr\Log\LoggerInterface $logger,
 		\Magento\Shipping\Model\Rate\ResultFactory $rateResultFactory,
-		\Magento\Framework\HTTP\ZendClientFactory $clientFactory,
+		\Magento\Framework\HTTP\Client\Curl $curl,
 		\Magento\Quote\Model\Quote\Address\RateResult\MethodFactory $rateMethodFactory,
 		\Magento\Directory\Model\RegionFactory $regionFactory,
 		array $data = []
 	) {
 		$this->_rateResultFactory = $rateResultFactory;
 		$this->_rateMethodFactory = $rateMethodFactory;
-		$this->_clientFactory = $clientFactory;
+		$this->_curl = $curl;
 		$this->_regionFactory = $regionFactory;
 		parent::__construct($scopeConfig, $rateErrorFactory, $logger, $data);
 	}
@@ -249,7 +243,7 @@ class Loomis extends \Magento\Shipping\Model\Carrier\AbstractCarrier implements
 
 		$url = "https://api.inxpressapps.com/carrier/v1/stores/" . $store_id . "/rates";
 
-		$payload = json_encode(array(
+		$payload = [
 			"account" => $account,
 			"services" => array(
 				array(
@@ -259,24 +253,14 @@ class Loomis extends \Magento\Shipping\Model\Carrier\AbstractCarrier implements
 			"origin" => $origin,
 			"destination" => $destination,
 			"items" => $products
-		));
+		];
 
 		$this->_logger->critical("InXpress requesting rates", ['url' => $url, 'request' => $payload]);
 
 		try {
-			/** @var \Magento\Framework\HTTP\ZendClient $client */
-			$client = $this->_clientFactory->create();
-			$client->setUri($url);
-			$client->setMethod(ZendClient::POST);
-			$client->setHeaders([
-				'Accept' => 'application/json',
-				'Content-Type' => 'application/json'
-			]);
-			$client->setConfig(array('maxredirects' => 0, 'timeout' => 30));
-			$client->setRawData($payload);
-			$client->setEncType('application/json');
-			$response = $client->request(\Magento\Framework\HTTP\ZendClient::POST)->getBody();
-
+			$this->_curl->addHeader("Content-Type", "application/json");
+			$this->_curl->post($url, json_encode($payload));
+			$response = $this->_curl->getBody();
 			$responseArray = json_decode($response, true);
 			$this->_logger->critical("InXpress response array", $responseArray);
 
