@@ -54,18 +54,18 @@
         },
         {
             "name": "adobe-commerce/adobe-ims-metapackage",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/adobe-commerce/adobe-ims-metapackage/adobe-commerce-adobe-ims-metapackage-2.2.0.0.zip",
-                "shasum": "5fbb3a89f44a66578fe1ce73d303d423c0f7cbb1"
+                "url": "https://repo.magento.com/archives/adobe-commerce/adobe-ims-metapackage/adobe-commerce-adobe-ims-metapackage-2.2.1.0.zip",
+                "shasum": "4a3680bf9244169db3561c5aac2c2a3a0b829eb2"
             },
             "require": {
-                "magento/module-admin-adobe-ims": "100.5.0",
-                "magento/module-admin-adobe-ims-two-factor-auth": "1.0.0",
-                "magento/module-adobe-ims": "2.2.0",
-                "magento/module-adobe-ims-api": "2.2.0",
-                "php": "~8.1.0||~8.2.0"
+                "magento/module-admin-adobe-ims": "100.5.1",
+                "magento/module-admin-adobe-ims-two-factor-auth": "1.0.1",
+                "magento/module-adobe-ims": "2.2.1",
+                "magento/module-adobe-ims-api": "2.2.1",
+                "php": "~8.1.0||~8.2.0||~8.3.0"
             },
             "type": "metapackage",
             "description": "Adobe IMS Integration"
@@ -112,16 +112,16 @@
         },
         {
             "name": "aws/aws-crt-php",
-            "version": "v1.2.4",
+            "version": "v1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/awslabs/aws-crt-php.git",
-                "reference": "eb0c6e4e142224a10b08f49ebf87f32611d162b2"
+                "reference": "0ea1f04ec5aa9f049f97e012d1ed63b76834a31b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/awslabs/aws-crt-php/zipball/eb0c6e4e142224a10b08f49ebf87f32611d162b2",
-                "reference": "eb0c6e4e142224a10b08f49ebf87f32611d162b2",
+                "url": "https://api.github.com/repos/awslabs/aws-crt-php/zipball/0ea1f04ec5aa9f049f97e012d1ed63b76834a31b",
+                "reference": "0ea1f04ec5aa9f049f97e012d1ed63b76834a31b",
                 "shasum": ""
             },
             "require": {
@@ -160,22 +160,22 @@
             ],
             "support": {
                 "issues": "https://github.com/awslabs/aws-crt-php/issues",
-                "source": "https://github.com/awslabs/aws-crt-php/tree/v1.2.4"
+                "source": "https://github.com/awslabs/aws-crt-php/tree/v1.2.5"
             },
-            "time": "2023-11-08T00:42:13+00:00"
+            "time": "2024-04-19T21:30:56+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.303.3",
+            "version": "3.305.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "3389ceccdc8e78d38bf60c6648d7da9768a86d9b"
+                "reference": "b190e24bd6568713436e1f13f9022bf28f491fc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3389ceccdc8e78d38bf60c6648d7da9768a86d9b",
-                "reference": "3389ceccdc8e78d38bf60c6648d7da9768a86d9b",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b190e24bd6568713436e1f13f9022bf28f491fc1",
+                "reference": "b190e24bd6568713436e1f13f9022bf28f491fc1",
                 "shasum": ""
             },
             "require": {
@@ -255,9 +255,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.303.3"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.305.3"
             },
-            "time": "2024-04-04T18:11:56+00:00"
+            "time": "2024-04-25T18:07:15+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -921,16 +921,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.7.2",
+            "version": "2.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "b826edb791571ab1eaf281eb1bd6e181a1192adc"
+                "reference": "a625e50598e12171d3f60b1149eb530690c43474"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/b826edb791571ab1eaf281eb1bd6e181a1192adc",
-                "reference": "b826edb791571ab1eaf281eb1bd6e181a1192adc",
+                "url": "https://api.github.com/repos/composer/composer/zipball/a625e50598e12171d3f60b1149eb530690c43474",
+                "reference": "a625e50598e12171d3f60b1149eb530690c43474",
                 "shasum": ""
             },
             "require": {
@@ -1015,7 +1015,7 @@
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
                 "security": "https://github.com/composer/composer/security/policy",
-                "source": "https://github.com/composer/composer/tree/2.7.2"
+                "source": "https://github.com/composer/composer/tree/2.7.4"
             },
             "funding": [
                 {
@@ -1031,7 +1031,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-03-11T16:12:18+00:00"
+            "time": "2024-04-22T19:17:03+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -3179,16 +3179,16 @@
         },
         {
             "name": "laminas/laminas-filter",
-            "version": "2.35.1",
+            "version": "2.35.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-filter.git",
-                "reference": "a03ad6a4976df7e6f6026ce8b2d1e9c53f6a99c4"
+                "reference": "3e821b33a787253d56046f9258174a22de1bd267"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-filter/zipball/a03ad6a4976df7e6f6026ce8b2d1e9c53f6a99c4",
-                "reference": "a03ad6a4976df7e6f6026ce8b2d1e9c53f6a99c4",
+                "url": "https://api.github.com/repos/laminas/laminas-filter/zipball/3e821b33a787253d56046f9258174a22de1bd267",
+                "reference": "3e821b33a787253d56046f9258174a22de1bd267",
                 "shasum": ""
             },
             "require": {
@@ -3254,7 +3254,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2024-04-04T09:13:02+00:00"
+            "time": "2024-04-11T08:13:56+00:00"
         },
         {
             "name": "laminas/laminas-http",
@@ -5076,16 +5076,16 @@
         },
         {
             "name": "magento/composer",
-            "version": "1.9.0",
+            "version": "1.10.0",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/magento/composer/magento-composer-1.9.0.0.zip",
-                "shasum": "d933c0b4183a06e703d788fc7932071ba3cf1332"
+                "url": "https://repo.magento.com/archives/magento/composer/magento-composer-1.10.0.0.zip",
+                "shasum": "bc98a70186d72c2ae58ef346795623b585f36103"
             },
             "require": {
                 "composer/composer": "^2.0",
-                "php": "~7.4.0||~8.1.0||~8.2.0",
-                "symfony/console": "~4.4.0||~5.4.0"
+                "php": "~7.4.0||~8.1.0||~8.2.0||~8.3.0",
+                "symfony/console": "~4.4.0||~5.4.0||~6.4.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9"
@@ -6239,11 +6239,11 @@
         },
         {
             "name": "magento/module-admin-adobe-ims",
-            "version": "100.5.0",
+            "version": "100.5.1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/magento/module-admin-adobe-ims/magento-module-admin-adobe-ims-100.5.0.0.zip",
-                "shasum": "bdacd08b88950e76da2014f6382f42e05950d006"
+                "url": "https://repo.magento.com/archives/magento/module-admin-adobe-ims/magento-module-admin-adobe-ims-100.5.1.0.zip",
+                "shasum": "20835969e80996c7a03e8e7e6e62ce2df2bd6ec3"
             },
             "require": {
                 "magento/framework": "*",
@@ -6259,7 +6259,7 @@
                 "magento/module-security": "*",
                 "magento/module-store": "*",
                 "magento/module-user": "*",
-                "php": "~8.1.0||~8.2.0"
+                "php": "~8.1.0||~8.2.0||~8.3.0"
             },
             "suggest": {
                 "magento/module-theme": "*"
@@ -6281,17 +6281,17 @@
         },
         {
             "name": "magento/module-admin-adobe-ims-two-factor-auth",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/magento/module-admin-adobe-ims-two-factor-auth/magento-module-admin-adobe-ims-two-factor-auth-1.0.0.0.zip",
-                "shasum": "7739bd4932b34adb66ee340ddeaf64724cd01fcc"
+                "url": "https://repo.magento.com/archives/magento/module-admin-adobe-ims-two-factor-auth/magento-module-admin-adobe-ims-two-factor-auth-1.0.1.0.zip",
+                "shasum": "ef991ee995e9348dcb977d46394e7bbb53073356"
             },
             "require": {
                 "magento/framework": "*",
                 "magento/module-admin-adobe-ims": "100.5.*",
                 "magento/module-two-factor-auth": "*",
-                "php": "~8.1.0||~8.2.0"
+                "php": "~8.1.0||~8.2.0||~8.3.0"
             },
             "type": "magento2-module",
             "autoload": {
@@ -6374,11 +6374,11 @@
         },
         {
             "name": "magento/module-adobe-ims",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/magento/module-adobe-ims/magento-module-adobe-ims-2.2.0.0.zip",
-                "shasum": "6aed7c40bc7731dc07e76a925f504d213c3c0cbd"
+                "url": "https://repo.magento.com/archives/magento/module-adobe-ims/magento-module-adobe-ims-2.2.1.0.zip",
+                "shasum": "371ad8d396f0792a48ec881bf8215267691a5c37"
             },
             "require": {
                 "magento/framework": "*",
@@ -6387,7 +6387,7 @@
                 "magento/module-backend": "*",
                 "magento/module-config": "*",
                 "magento/module-user": "*",
-                "php": "~8.1.0||~8.2.0"
+                "php": "~8.1.0||~8.2.0||~8.3.0"
             },
             "type": "magento2-module",
             "autoload": {
@@ -6406,15 +6406,15 @@
         },
         {
             "name": "magento/module-adobe-ims-api",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/magento/module-adobe-ims-api/magento-module-adobe-ims-api-2.2.0.0.zip",
-                "shasum": "42fa83fc13c768d573f2027c04d132864dea39d9"
+                "url": "https://repo.magento.com/archives/magento/module-adobe-ims-api/magento-module-adobe-ims-api-2.2.1.0.zip",
+                "shasum": "f4cfaf688e19439ddd2d6d0faaf53f9b2c260ce0"
             },
             "require": {
                 "magento/framework": "*",
-                "php": "~8.1.0||~8.2.0"
+                "php": "~8.1.0||~8.2.0||~8.3.0"
             },
             "type": "magento2-module",
             "autoload": {
@@ -17821,16 +17821,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "2.9.2",
+            "version": "2.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "437cb3628f4cf6042cc10ae97fc2b8472e48ca1f"
+                "reference": "a30bfe2e142720dfa990d0a7e573997f5d884215"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/437cb3628f4cf6042cc10ae97fc2b8472e48ca1f",
-                "reference": "437cb3628f4cf6042cc10ae97fc2b8472e48ca1f",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/a30bfe2e142720dfa990d0a7e573997f5d884215",
+                "reference": "a30bfe2e142720dfa990d0a7e573997f5d884215",
                 "shasum": ""
             },
             "require": {
@@ -17851,8 +17851,8 @@
                 "mongodb/mongodb": "^1.8",
                 "php-amqplib/php-amqplib": "~2.4 || ^3",
                 "phpspec/prophecy": "^1.15",
-                "phpstan/phpstan": "^0.12.91",
-                "phpunit/phpunit": "^8.5.14",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^8.5.38 || ^9.6.19",
                 "predis/predis": "^1.1 || ^2.0",
                 "rollbar/rollbar": "^1.3 || ^2 || ^3",
                 "ruflin/elastica": "^7",
@@ -17907,7 +17907,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/2.9.2"
+                "source": "https://github.com/Seldaek/monolog/tree/2.9.3"
             },
             "funding": [
                 {
@@ -17919,7 +17919,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-10-27T15:25:26+00:00"
+            "time": "2024-04-12T20:52:51+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",
@@ -18226,16 +18226,16 @@
         },
         {
             "name": "paragonie/sodium_compat",
-            "version": "v1.20.0",
+            "version": "v1.21.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/sodium_compat.git",
-                "reference": "e592a3e06d1fa0d43988c7c7d9948ca836f644b6"
+                "reference": "bb312875dcdd20680419564fe42ba1d9564b9e37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/sodium_compat/zipball/e592a3e06d1fa0d43988c7c7d9948ca836f644b6",
-                "reference": "e592a3e06d1fa0d43988c7c7d9948ca836f644b6",
+                "url": "https://api.github.com/repos/paragonie/sodium_compat/zipball/bb312875dcdd20680419564fe42ba1d9564b9e37",
+                "reference": "bb312875dcdd20680419564fe42ba1d9564b9e37",
                 "shasum": ""
             },
             "require": {
@@ -18306,9 +18306,9 @@
             ],
             "support": {
                 "issues": "https://github.com/paragonie/sodium_compat/issues",
-                "source": "https://github.com/paragonie/sodium_compat/tree/v1.20.0"
+                "source": "https://github.com/paragonie/sodium_compat/tree/v1.21.1"
             },
-            "time": "2023-04-30T00:54:53+00:00"
+            "time": "2024-04-22T22:05:04+00:00"
         },
         {
             "name": "paypal/module-braintree",
@@ -20182,16 +20182,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.9.1",
+            "version": "3.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "267a4405fff1d9c847134db3a3c92f1ab7f77909"
+                "reference": "aac1f6f347a5c5ac6bc98ad395007df00990f480"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/267a4405fff1d9c847134db3a3c92f1ab7f77909",
-                "reference": "267a4405fff1d9c847134db3a3c92f1ab7f77909",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/aac1f6f347a5c5ac6bc98ad395007df00990f480",
+                "reference": "aac1f6f347a5c5ac6bc98ad395007df00990f480",
                 "shasum": ""
             },
             "require": {
@@ -20258,7 +20258,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-03-31T21:03:09+00:00"
+            "time": "2024-04-23T20:25:34+00:00"
         },
         {
             "name": "symfony/config",
@@ -22933,16 +22933,16 @@
         },
         {
             "name": "web-token/jwt-framework",
-            "version": "3.3.5",
+            "version": "3.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/web-token/jwt-framework.git",
-                "reference": "c755aaabc3eca524648ced0959a1593c3d1292fc"
+                "reference": "0b8be708a86a40dfbdf3104a8db924768ceb21ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/web-token/jwt-framework/zipball/c755aaabc3eca524648ced0959a1593c3d1292fc",
-                "reference": "c755aaabc3eca524648ced0959a1593c3d1292fc",
+                "url": "https://api.github.com/repos/web-token/jwt-framework/zipball/0b8be708a86a40dfbdf3104a8db924768ceb21ea",
+                "reference": "0b8be708a86a40dfbdf3104a8db924768ceb21ea",
                 "shasum": ""
             },
             "require": {
@@ -22954,6 +22954,7 @@
                 "paragonie/constant_time_encoding": "^2.6",
                 "paragonie/sodium_compat": "^1.20",
                 "php": ">=8.1",
+                "psr/cache": "^3.0",
                 "psr/clock": "^1.0",
                 "psr/event-dispatcher": "^1.0",
                 "psr/http-client": "^1.0",
@@ -23085,7 +23086,7 @@
             ],
             "support": {
                 "issues": "https://github.com/web-token/jwt-framework/issues",
-                "source": "https://github.com/web-token/jwt-framework/tree/3.3.5"
+                "source": "https://github.com/web-token/jwt-framework/tree/3.4.3"
             },
             "funding": [
                 {
@@ -23097,7 +23098,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2024-04-03T07:57:45+00:00"
+            "time": "2024-04-17T18:06:18+00:00"
         },
         {
             "name": "webimpress/safe-writer",
