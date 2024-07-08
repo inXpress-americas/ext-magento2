@@ -83,6 +83,16 @@
                 <type>I</type>
                 <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
             </startrackinxpress>
+            <tntinxpress>
+                <active>0</active>
+                <sallowspecific>0</sallowspecific>
+                <model>InXpress\InXpressRating\Model\Carrier\TNTInxpress</model>
+                <name>InXpress TNT Shipping</name>
+                <account></account>
+                <title>TNT by InXpress</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+            </tntinxpress>
         </carriers>
     </default>
 </config>

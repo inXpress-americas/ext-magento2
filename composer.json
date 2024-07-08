@@ -1,60 +1,61 @@
 {
-    "name": "inxpress-americas/magento2",
-    "description": "InXpress shipping rate provider for Magento 2",
-    "keywords": [
-        "module",
-        "magento2",
-        "inxpress"
-    ],
-    "homepage": "https://www.inxpressapps.com/",
-    "type": "magento2-module",
-    "version": "v0.5.0",
-    "license": "proprietary",
-    "authors": [
-        {
-            "email": "developers@inxpress.com",
-            "name": "InXpress"
-        }
-    ],
-    "scripts": {
-        "test": "phpcs -v -p etc Model Controller registration.php --config-set show_warnings 0",
-        "fix": "phpcbf etc Model Controller registration.php",
-        "testversion": "phpcs -p -v etc Model Controller registration.php --standard=PHPCompatibility --runtime-set testVersion 7.4-",
-        "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
-        "post-update-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
-    },
-    "minimum-stability": "stable",
-    "require": {
-        "php": "^7.4|^8.1"
-    },
-    "prefer-stable": true,
-    "require-dev": {
-        "dealerdirect/phpcodesniffer-composer-installer": "*",
-        "phpcompatibility/php-compatibility": "*",
-        "magento-ecg/coding-standard": "*",
-        "magento/product-community-edition": "2.4.6"
-    },
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-            "InXpress\\InXpressRating\\": ""
-        }
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://repo.magento.com/"
-        }
-    ],
-    "config": {
-        "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": false,
-            "laminas/laminas-dependency-plugin": false,
-            "magento/composer-dependency-version-audit-plugin": false,
-            "magento/inventory-composer-installer": false,
-            "magento/magento-composer-installer": false
-        }
+  "name": "inxpress-americas/magento2",
+  "description": "InXpress shipping rate provider for Magento 2",
+  "keywords": [
+    "module",
+    "magento2",
+    "inxpress"
+  ],
+  "homepage": "https://www.inxpressapps.com/",
+  "type": "magento2-module",
+  "version": "v0.5.1",
+  "license": "proprietary",
+  "authors": [
+    {
+      "email": "developers@inxpress.com",
+      "name": "InXpress"
     }
+  ],
+  "scripts": {
+    "test": "phpcs -v -p etc Model Controller registration.php --config-set show_warnings 0",
+    "fix": "phpcbf etc Model Controller registration.php",
+    "testversion": "phpcs -p -v etc Model Controller registration.php --standard=PHPCompatibility --runtime-set testVersion 7.4-",
+    "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
+    "post-update-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^7.4|^8.1"
+  },
+  "prefer-stable": true,
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "*",
+    "phpcompatibility/php-compatibility": "*",
+    "magento-ecg/coding-standard": "*",
+    "magento/product-community-edition": "2.4.6"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "InXpress\\InXpressRating\\": ""
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://repo.magento.com/"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": false,
+      "laminas/laminas-dependency-plugin": false,
+      "magento/composer-dependency-version-audit-plugin": false,
+      "magento/inventory-composer-installer": false,
+      "magento/magento-composer-installer": false
+    }
+  }
 }
+
